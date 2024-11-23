@@ -9,7 +9,12 @@ C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\Wunpus.AssemblyI
 C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\Wunpus.AssemblyInfo.cs
 C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\Wunpus.csproj.CoreCompileInputs.cache
 C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\Wunpus.dll
-C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\refint\Wunpus.dll
 C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\Wunpus.pdb
 C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\Wunpus.genruntimeconfig.cache
-C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\ref\Wunpus.dll
+C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\bin\Debug\net6.0\Wunpus.pssym
+C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\bin\Debug\net6.0\Wunpus.pspdb
+C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\bin\Debug\net6.0\PostSharp.dll
+C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\PostSharp\touch
+C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\PostSharp\AdditionalBuildDependencies.txt
+C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\Wunpus.csproj.CopyComplete
+C:\Users\BIENVENIDO\source\repos\Wunpus\Wunpus\obj\Debug\net6.0\PostSharp\postsharp.app.config

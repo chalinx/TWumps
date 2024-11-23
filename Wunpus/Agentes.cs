@@ -157,21 +157,23 @@ namespace Wunpus
                 // Aplicar decoradores según el tipo de agente
                 if (nuevoAgente is Oro)
                 {
-                    nuevoAgente = new AgenteResaltado(nuevoAgente, ConsoleColor.DarkYellow); // Resaltar Oro
-                    nuevoAgente = new AgenteConIconoExtra(nuevoAgente, '$');                // Agregar ícono especial
+                    nuevoAgente = new AgenteResaltado(nuevoAgente, ConsoleColor.DarkYellow); 
+                    nuevoAgente = new AgenteConIconoExtra(nuevoAgente, '$');               
                 }
                 else if (nuevoAgente is Wunpu)
                 {
                     nuevoAgente = new AgenteResaltado(nuevoAgente, ConsoleColor.DarkRed);   // Resaltar Wunpu
-                    nuevoAgente = new AgenteConIconoExtra(nuevoAgente, '!');                // Agregar ícono especial
+                    nuevoAgente = new AgenteConIconoExtra(nuevoAgente, '☻');                // Agregar ícono especial
                 }
                 else if (nuevoAgente is Flecha)
                 {
                     nuevoAgente = new AgenteResaltado(nuevoAgente, ConsoleColor.DarkGreen); // Resaltar Flecha
+                    nuevoAgente = new AgenteConIconoExtra(nuevoAgente, '}');                // Agregar ícono especial
+
                 }
                 else if (nuevoAgente is Hedor)
                 {
-                    nuevoAgente = new AgenteConIconoExtra(nuevoAgente, '*');                // Agregar ícono especial
+                    nuevoAgente = new AgenteConIconoExtra(nuevoAgente, '§');                // Agregar ícono especial
                 }
 
                 // Agregar el agente (posiblemente decorado) a la lista

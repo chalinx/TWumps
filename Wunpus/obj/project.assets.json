@@ -1,11 +1,117 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "PostSharp/2024.1.6": {
+        "type": "package",
+        "dependencies": {
+          "PostSharp.Redist": "2024.1.6"
+        },
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/PostSharp.props": {},
+          "build/PostSharp.targets": {}
+        }
+      },
+      "PostSharp.Redist/2024.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/PostSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/PostSharp.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PostSharp/2024.1.6": {
+      "sha512": "zghGz7QN67qKCha/aJOQnAUVXLnNdCzdhRMLvJC0jxeA5UuabdmTwrMfeU4b25c577jYvAuaTsFzp5/kAk6wQQ==",
+      "type": "package",
+      "path": "postsharp/2024.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.html",
+        "build/PostSharp-Tools.7z",
+        "build/PostSharp.BeforeTargetFrameworkInference.targets",
+        "build/PostSharp.Version.properties",
+        "build/PostSharp.properties",
+        "build/PostSharp.props",
+        "build/PostSharp.targets",
+        "build/PostSharp.tasks",
+        "build/_common/unzipper/net472/Microsoft.Bcl.AsyncInterfaces.dll",
+        "build/_common/unzipper/net472/SharpCompress.dll",
+        "build/_common/unzipper/net472/System.Buffers.dll",
+        "build/_common/unzipper/net472/System.Memory.dll",
+        "build/_common/unzipper/net472/System.Numerics.Vectors.dll",
+        "build/_common/unzipper/net472/System.Runtime.CompilerServices.Unsafe.dll",
+        "build/_common/unzipper/net472/System.Text.Encoding.CodePages.dll",
+        "build/_common/unzipper/net472/System.Threading.Tasks.Extensions.dll",
+        "build/_common/unzipper/net472/ZstdSharp.dll",
+        "build/_common/unzipper/net472/unzipper.exe",
+        "build/_common/unzipper/net472/unzipper.exe.config",
+        "build/_common/unzipper/net472/unzipper.pdb",
+        "build/_common/unzipper/net6.0/SharpCompress.dll",
+        "build/_common/unzipper/net6.0/System.Text.Encoding.CodePages.dll",
+        "build/_common/unzipper/net6.0/ZstdSharp.dll",
+        "build/_common/unzipper/net6.0/runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll",
+        "build/_common/unzipper/net6.0/unzipper.deps.json",
+        "build/_common/unzipper/net6.0/unzipper.dll",
+        "build/_common/unzipper/net6.0/unzipper.exe",
+        "build/_common/unzipper/net6.0/unzipper.pdb",
+        "build/_common/unzipper/net6.0/unzipper.runtimeconfig.json",
+        "build/net472/PostSharp.MSBuild.v2024.1.6.Release.dll",
+        "build/net472/PostSharp.MSBuild.v2024.1.6.Release.pdb",
+        "build/net6.0/PostSharp.MSBuild.v2024.1.6.Release.dll",
+        "build/net6.0/PostSharp.MSBuild.v2024.1.6.Release.pdb",
+        "icon.png",
+        "lib/net35-client/_._",
+        "lib/netstandard1.0/_._",
+        "postsharp.2024.1.6.nupkg.sha512",
+        "postsharp.nuspec"
+      ]
+    },
+    "PostSharp.Redist/2024.1.6": {
+      "sha512": "SdDPPIEkgxNOhACU7mu6ehWORYpVo9OALY9xKONlC6Ao08oSiXKUAI4EYb7nQUzCv2TatK1zSny98eyKs6w75A==",
+      "type": "package",
+      "path": "postsharp.redist/2024.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "icon.png",
+        "lib/net35-client/PostSharp.dll",
+        "lib/net35-client/PostSharp.xml",
+        "lib/net45/PostSharp.dll",
+        "lib/net45/PostSharp.xml",
+        "lib/net5.0/PostSharp.dll",
+        "lib/net5.0/PostSharp.xml",
+        "lib/net6.0/PostSharp.dll",
+        "lib/net6.0/PostSharp.xml",
+        "lib/net7.0/PostSharp.dll",
+        "lib/net7.0/PostSharp.xml",
+        "lib/net8.0/PostSharp.dll",
+        "lib/net8.0/PostSharp.xml",
+        "lib/netstandard1.3/PostSharp.dll",
+        "lib/netstandard1.3/PostSharp.xml",
+        "lib/netstandard2.0/PostSharp.dll",
+        "lib/netstandard2.0/PostSharp.xml",
+        "postsharp.redist.2024.1.6.nupkg.sha512",
+        "postsharp.redist.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "PostSharp >= 2024.1.6"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\BIENVENIDO\\.nuget\\packages\\": {}
@@ -45,6 +151,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "PostSharp": {
+            "target": "Package",
+            "version": "[2024.1.6, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

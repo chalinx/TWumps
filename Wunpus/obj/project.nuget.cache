@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yR2lKtLwvk+qRpIaTpEcf/GRPZhaM9bXZrrp76OWbCOb2ZZYsvlx64PzBC03ZfxSDeaNyeE9ewnOCiuoZ+XwqA==",
+  "dgSpecHash": "Mb1ZJmOrZrAphhBFj3i160VZ2u6AQC7NV3ulNcQTNyl8eHPnah3nfP+jZVByPXQmU/8PmOv1jN4G0yZC/IZWUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\BIENVENIDO\\source\\repos\\Wunpus\\Wunpus\\Wunpus.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\BIENVENIDO\\.nuget\\packages\\postsharp\\2024.1.6\\postsharp.2024.1.6.nupkg.sha512",
+    "C:\\Users\\BIENVENIDO\\.nuget\\packages\\postsharp.redist\\2024.1.6\\postsharp.redist.2024.1.6.nupkg.sha512"
+  ],
   "logs": []
 }
