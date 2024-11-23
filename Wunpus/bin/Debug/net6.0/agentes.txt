@@ -1,0 +1,4 @@
+El Wunpus y el Agujero se encuentran siempre rodeado vertical y horizontalmente de
+un agente en particular el Hedor y el Viento respectivamente.
+Al ser devorado por un Wunpu o caer en un Pozo pierdes una vida y vuelves al punto
+de partida.

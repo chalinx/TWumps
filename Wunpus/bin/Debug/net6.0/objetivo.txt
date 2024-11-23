@@ -1,0 +1,6 @@
+El objetivo del juego es sencillo. El Aventurero debe de buscar por el
+tablero los tesoro y salir sin ser devorado por los Wumpus o no caer en ningún
+pozo.
+
+Si el Aventurero cambia de Color es debido que se encuentra encima de un agente,
+como:

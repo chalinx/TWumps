@@ -1,0 +1,14 @@
+El Aventurero se movera con el teclado configurado siguiente:
+TECLA ↑ ---- se mueve arriba
+TECLA ↓ ---- se mueve abajo
+TECLA → ---- se mueve a la derecha
+TECLA ← ---- se mueve a la izquierda
+TECLA ENTER ---- se recoge las flechas o el tesoro.
+
+La flecha sirve para matar al Wunpu o ver que se encuentra en el casillero
+adyacente al personaje.
+
+TECLA W ---- disparar hacia arriba
+TECLA S ---- disparar hacia abajo
+TECLA D ---- disparar hacia derecha
+TECLA A ---- disparar hacia izquierda
