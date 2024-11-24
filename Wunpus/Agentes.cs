@@ -9,7 +9,7 @@ namespace Wunpus
     abstract class Agente : Cdimension
     {
         protected int identidad;
-        protected bool colision;
+        public bool colision;
         protected ConsoleColor foregroundColor;
         protected ConsoleColor backgroundColor;
         protected char displayChar;
@@ -126,21 +126,23 @@ namespace Wunpus
         {
             for (int i = 0; i < agent.Count; i++)
             {
-                if (per.Rango(agent[i].Pos_X, agent[i].Pos_Y))
+                if (agent[i].colision && per.Rango(agent[i].Pos_X, agent[i].Pos_Y))
                 {
                     agent[i].Mostrar();
                     nColision = false;
                     break;
                 }
                 nColision = true;
+
             }
+
 
         }
         public void AgregarEnemigos(int color, int x, int y)
         {
             Agente nuevoAgente = null;
 
-            // Crear una instancia del agente base según el color
+            //  agente base según el color
             switch (color)
             {
                 case 2: nuevoAgente = new Viento(x, y); break;
@@ -154,7 +156,7 @@ namespace Wunpus
             // Si el agente fue creado exitosamente
             if (nuevoAgente != null)
             {
-                // Aplicar decoradores según el tipo de agente
+                // decorrar agnte, rstaltado y icono
                 if (nuevoAgente is Oro)
                 {
                     nuevoAgente = new AgenteResaltado(nuevoAgente, ConsoleColor.DarkYellow); 
@@ -176,7 +178,6 @@ namespace Wunpus
                     nuevoAgente = new AgenteConIconoExtra(nuevoAgente, '§');                // Agregar ícono especial
                 }
 
-                // Agregar el agente (posiblemente decorado) a la lista
                 agent.Add(nuevoAgente);
             }
         }
@@ -191,6 +192,12 @@ namespace Wunpus
             get { return agent; }
             set { agent = value; }
         }
+        public bool colision
+        {
+            get { return colision; }
+            set { colision = value; }
+        }
+
 
 
 

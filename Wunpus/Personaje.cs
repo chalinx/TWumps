@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Wunpus.Aspects;
+
 
 namespace Wunpus
 {
-    // Definición de la enumeración Direccion
     public enum Direccion
     {
         Arriba,
@@ -18,7 +19,9 @@ namespace Wunpus
         private int score;
         private int cambio;
         private List<Flecha> Arco;
-        private Escenario esc; // Agregamos el campo esc para tener acceso al escenario
+        private Escenario esc; 
+        private Manejador manejadorPrincipal;
+
 
         private static readonly Dictionary<int, (ConsoleColor color, char caracter)> visualizacion = new Dictionary<int, (ConsoleColor, char)>
         {
@@ -32,12 +35,24 @@ namespace Wunpus
 
         public Personaje(Escenario esc) : base()
         {
-            this.esc = esc; // Inicializamos el campo esc
+            this.esc = esc;
             Arco = new List<Flecha>();
             pos_x = esc.Pos_Y + 1;
             pos_y = esc.Pos_X + 1;
             vida = 3;
             cambio = 0;
+
+            var manejadorFlecha = new ManejadorFlecha();
+            var manejadorOro = new ManejadorOro();
+            var manejadorColision = new ManejadorColision();
+            var manejadorDefault = new ManejadorDefault();
+
+            manejadorFlecha.EstablecerSiguiente(manejadorOro);
+            manejadorOro.EstablecerSiguiente(manejadorColision);
+            manejadorColision.EstablecerSiguiente(manejadorDefault);
+
+            manejadorPrincipal = manejadorFlecha;
+
             Borrar();
             Mostrar();
             datos();
@@ -62,7 +77,7 @@ namespace Wunpus
             Console.Write("Flechas:" + Arco.Count);
         }
 
-        private void InteraccionAgente(Agente agente, ConsoleKeyInfo tecla)
+        /*private void InteraccionAgente(Agente agente, ConsoleKeyInfo tecla)
         {
             if (agente.Pos_X == pos_x && agente.Pos_Y == pos_y)
             {
@@ -95,8 +110,49 @@ namespace Wunpus
                 }
               Mostrar();
             }
+        }*/
+       private void InteraccionAgente(Agente agente, ConsoleKeyInfo tecla)
+{
+    if (agente.Pos_X == pos_x && agente.Pos_Y == pos_y)
+    {
+        agente.Mostrar();
+
+        if (tecla.Key == ConsoleKey.Enter || tecla.Key == ConsoleKey.Spacebar)
+        {
+            // Manejar la interacción a través del manejador principal
+            manejadorPrincipal.Manejar(this, agente);
+
+            switch (agente.Identidad)
+            {
+                case Const.flecha:
+                    Arco.Add(new Flecha(pos_x, pos_y));
+                    datos(); 
+                    break;
+
+                case Const.oro:
+                    score += 10;
+                    datos(); 
+                    break;
+            }
+        }
+        else if (agente.Identidad == Const.wunpu || agente.Identidad == Const.agujero)
+        {
+
+            vida--;
+            datos(); 
+
+            pos_x = esc.Pos_Y + 1;
+            pos_y = esc.Pos_X + 1;
+            Mostrar(); // Mostramos al personaje en la nueva posición
         }
 
+        // Mostrar siempre después de cualquier interacción
+        Mostrar();
+    }
+}
+
+
+        [LoggingAspect]
         public void Agregar_y_eliminar_Agentes(ref CAgentes agente, ConsoleKeyInfo tecla)
         {
             for (int i = agente.Agent.Count - 1; i >= 0; i--)
@@ -201,6 +257,7 @@ namespace Wunpus
             }
         }
 
+        [LoggingAspect]
         public void Movimiento(ref Escenario esc, ConsoleKeyInfo tecla, ref CAgentes Agent)
         {
             if (Agent.Ncolision) Borrar();
@@ -227,5 +284,31 @@ namespace Wunpus
         }
 
         public bool game_over() => vida > 0;
+        public int Vida
+        {
+            get { return vida; }
+            set { vida = value; }
+        }
+
+        public int Score
+        {
+            get { return score; }
+            set { score = value; }
+        }
+
+        public void AgregarFlecha(Flecha flecha)
+        {
+            Arco.Add(flecha);
+        }
+        public void ReiniciarPosicion()
+        {
+            pos_x = esc.Pos_Y + 1;
+            pos_y = esc.Pos_X + 1;
+            Mostrar();
+        }
+
+
+
+
     }
 }

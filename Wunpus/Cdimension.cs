@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wunpus.Aspects;
 
 namespace Wunpus
 {
+    [NotNullAspect]
     abstract class Cdimension
     {
         protected int pos_x;

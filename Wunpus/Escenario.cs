@@ -1,4 +1,5 @@
 ﻿using System;
+using Wunpus.Aspects;
 
 namespace Wunpus
 {
@@ -15,14 +16,12 @@ namespace Wunpus
             this.pos_x = pos_x;
             this.pos_y = pos_y;
 
-            // Cargar el mapa desde el archivo
             map = CargarMapaDesdeArchivo(archivoMapa, fila, columna);
 
-            // Pintar el escenario basado en el mapa cargado
             Pintar_escenario(ref ene);
         }
 
-        // Método para cargar el mapa desde un archivo
+        [ExceptionHandlingAspect]
         private int[,] CargarMapaDesdeArchivo(string archivoMapa, int filas, int columnas)
         {
             int[,] mapa = new int[filas, columnas];
@@ -52,6 +51,7 @@ namespace Wunpus
             return mapa;
         }
 
+        [PerformanceAspect]
         public void Pintar_escenario(ref CAgentes q)
         {
             for (int i = pos_x; i < fila + pos_x; i++)

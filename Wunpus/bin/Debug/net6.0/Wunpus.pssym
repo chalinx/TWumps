@@ -1,2 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Symbols LinesOfCode="618" PostSharpLinesOfCode="0" EnhancedTypesCount="0" SchemaVersion="1" PostSharpVersion="2024.1.6.0" xmlns="http://schemas.postsharp.org/2.0/symbols" />
+<Symbols LinesOfCode="743" PostSharpLinesOfCode="0" EnhancedTypesCount="3" SchemaVersion="1" PostSharpVersion="2024.1.6.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+  <Class Class="#1=T:[Wunpus]Wunpus.Aspects.LoggingAspect">
+    <Instance Declaration="#2=M:[Wunpus]Wunpus.Personaje::Agregar_y_eliminar_Agentes(ref [Wunpus]Wunpus.CAgentes, System.ConsoleKeyInfo)" Id="c2c8045e00008005">
+      <Target LinesAvoided="4">
+        <JoinPoint Description="#3=Wrapped by advice(s) OnEntry, OnExit" Ordinal="8" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#4=M:[Wunpus]Wunpus.Personaje::Movimiento(ref [Wunpus]Wunpus.Escenario, System.ConsoleKeyInfo, ref [Wunpus]Wunpus.CAgentes)" Id="c2c8045e00008006">
+      <Target LinesAvoided="4">
+        <JoinPoint Description="#3" Ordinal="9" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#5=T:[Wunpus]Wunpus.Aspects.PerformanceAspect">
+    <Instance Declaration="#6=M:[Wunpus]Wunpus.Escenario::Pintar_escenario(ref [Wunpus]Wunpus.CAgentes)" Id="c2c8045e00008007">
+      <Target LinesAvoided="4">
+        <JoinPoint Description="#3" Ordinal="11" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#7=T:[Wunpus]Wunpus.Aspects.NotNullAspect">
+    <Instance Declaration="#8=T:[Wunpus]Wunpus.Cdimension" Id="c2c8045e00008008">
+      <Target Target="#9=M:[Wunpus]Wunpus.Cdimension::#ctor()" LinesAvoided="2">
+        <JoinPoint Description="#10=Wrapped by advice(s) OnEntry" Ordinal="0" />
+      </Target>
+      <Target Target="#11=M:[Wunpus]Wunpus.Cdimension::#ctor(System.Int32, System.Int32)" LinesAvoided="2">
+        <JoinPoint Description="#10" />
+      </Target>
+      <Target Target="#12=M:[Wunpus]Wunpus.Cdimension::Mostrar()" LinesAvoided="2">
+        <JoinPoint Description="#10" Ordinal="2" />
+      </Target>
+      <Target Target="#13=M:[Wunpus]Wunpus.Cdimension::Borrar()" LinesAvoided="2">
+        <JoinPoint Description="#10" Ordinal="3" />
+      </Target>
+      <Target Target="#14=M:[Wunpus]Wunpus.Cdimension::get_Pos_X()" LinesAvoided="2">
+        <JoinPoint Description="#10" Ordinal="4" />
+      </Target>
+      <Target Target="#15=M:[Wunpus]Wunpus.Cdimension::set_Pos_X(System.Int32)" LinesAvoided="2">
+        <JoinPoint Description="#10" Ordinal="5" />
+      </Target>
+      <Target Target="#16=M:[Wunpus]Wunpus.Cdimension::get_Pos_Y()" LinesAvoided="2">
+        <JoinPoint Description="#10" Ordinal="6" />
+      </Target>
+      <Target Target="#17=M:[Wunpus]Wunpus.Cdimension::set_Pos_Y(System.Int32)" LinesAvoided="2">
+        <JoinPoint Description="#10" Ordinal="7" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#18=T:[Wunpus]Wunpus.Aspects.ExceptionHandlingAspect">
+    <Instance Declaration="#19=M:[Wunpus]Wunpus.Escenario::CargarMapaDesdeArchivo(System.String, System.Int32, System.Int32)" Id="c2c8045e00008009">
+      <Target LinesAvoided="2">
+        <JoinPoint Description="#20=Wrapped by advice(s) OnException" Ordinal="10" />
+      </Target>
+    </Instance>
+  </Class>
+  <Annotation Target="#21=M:[Wunpus]Wunpus.Aspects.NotNullAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#22=2" Description="#23=PostSharp estimates that 2 lines of code are saved every time this advice is applied. Use the [LinesOfCodeAvoided] attribute on the aspect or specify the LinesOfCodeAvoided property on the advice attribute to override this value." />
+  <Annotation Target="#24=M:[Wunpus]Wunpus.Aspects.LoggingAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#22" Description="#23" />
+  <Annotation Target="#25=M:[Wunpus]Wunpus.Aspects.LoggingAspect::OnExit(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#22" Description="#23" />
+  <Annotation Target="#26=M:[Wunpus]Wunpus.Aspects.ExceptionHandlingAspect::OnException(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#22" Description="#23" />
+  <Annotation Target="#27=M:[Wunpus]Wunpus.Aspects.PerformanceAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#22" Description="#23" />
+  <Annotation Target="#28=M:[Wunpus]Wunpus.Aspects.PerformanceAspect::OnExit(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#22" Description="#23" />
+</Symbols>
